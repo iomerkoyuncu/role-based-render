@@ -7,8 +7,9 @@ import { useSelector, useDispatch } from "react-redux"
 
 import { logout, reset } from "../features/auth/authSlice"
 
+import Users from "./Users"
+
 import Spinner from "../components/Spinner"
-import ShoppingCart from "../components/Counter"
 
 function Home() {
 	const navigate = useNavigate()
@@ -29,11 +30,11 @@ function Home() {
 			<div className='w-screen h-screen flex justify-center items-start'>
 				<div className='w-4/5 '>
 					<h1 className='font-bold text-3xl text-center m-4'>
-						Hoşgeldin {user?.name}
+						Hoşgeldin {user?.firstname}
 					</h1>
 					<hr className='border-2 border-black' />
 
-					<ShoppingCart />
+					<Users />
 
 					<div className='flex justify-center items-center m-2 text-center'>
 						<div className='text-center flex'>

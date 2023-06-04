@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 import { useSelector, useDispatch } from "react-redux"
-import { login, reset } from "../features/auth/authSlice"
+import { login, reset, getUserRole } from "../features/auth/authSlice"
 import { toast } from "react-toastify"
 
 import Spinner from "../components/Spinner"
@@ -29,8 +29,11 @@ function Login() {
 		}
 
 		// Redirect when logged in
-		if (isSuccess || user) {
+		if (isSuccess && user) {
 			navigate("/")
+			setTimeout(() => {
+				dispatch(getUserRole(user.id))
+			}, 2000)
 		}
 
 		dispatch(reset())

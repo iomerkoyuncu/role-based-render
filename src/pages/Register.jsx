@@ -14,7 +14,6 @@ function Register() {
 		email: "",
 		password: "",
 		password2: "",
-		role: "",
 	})
 
 	const [matchError, setMatchError] = useState(false)

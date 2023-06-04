@@ -12,12 +12,14 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 
 import Navbar from './components/Navbar/Navbar'
+import AddUser from './pages/AddUser';
+import UpdateUser from "./pages/UpdateUser"
 
 function App() {
 
   const { user } = useSelector((state) => state.auth)
 
-  console.log(user)
+
   return (
     <>
       <Router>
@@ -29,6 +31,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/add" element={<AddUser />} />
+          <Route path="/update/:id" element={<UpdateUser />} />
+
         </Routes>
       </Router>
     </>
